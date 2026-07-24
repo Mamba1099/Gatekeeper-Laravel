@@ -16,7 +16,7 @@ use App\Models\LoginAttempt;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, HasUuids, Notifiable; // ← HasApiTokens included
+    use HasApiTokens, HasFactory, HasUuids, Notifiable;
 
     public $incrementing = false;
     protected $keyType = 'string';
@@ -43,7 +43,6 @@ class User extends Authenticatable
         'last_login_at' => 'datetime',
     ];
 
-    // Relationships
     public function department()
     {
         return $this->belongsTo(Department::class);
